@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Automod Regex Rules</title>
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Prism.js Theme -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.css">
+</head>
+<body>
+    <header>
+        <h1>Discord AutoMod Regex Showcase</h1>
+        <p>Explore regex rules to enhance your Discord server's auto moderation.</p>
+    </header>
+
+    <!-- Spam Protection -->
+    <div class="rule-container">
+        <h2 class="rule-title">Spam Protection</h2>
+        <p>This rule detects repeated characters in a message:</p>
+        <div class="code-container">
+            <pre><code class="language-regex" id="regex1">/(.)\1{4,}/g</code></pre>
+            <button class="copy-btn" onclick="copyToClipboard('regex1')">📑</button>
+        </div>
+        <p><strong>Example:</strong> Matches <em>“heyyyyyyy”</em> or <em>“woooowww”</em>.</p>
+    </div>
+
+    <!-- Profanity Filter -->
+    <div class="rule-container">
+        <h2 class="rule-title">Profanity Filter</h2>
+        <p>This rule blocks offensive words:</p>
+        <div class="code-container">
+            <pre><code class="language-regex" id="regex2">/(badword|offensiveword)/gi</code></pre>
+            <button class="copy-btn" onclick="copyToClipboard('regex2')">📑</button>
+        </div>
+        <p><strong>Example:</strong> Matches common offensive terms.</p>
+    </div>
+
+    <!-- Link Detection -->
+    <div class="rule-container">
+        <h2 class="rule-title">Link Detection</h2>
+        <p>This rule detects URLs and prevents users from posting links:</p>
+        <div class="code-container">
+            <pre><code class="language-regex" id="regex3">https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)</code></pre>
+            <button class="copy-btn" onclick="copyToClipboard('regex3')">📑</button>
+        </div>
+        <p><strong>Example:</strong> Matches <em>“http://example.com”</em> or <em>“https://discord.gg/abcdef”</em>.</p>
+    </div>
+
+    <!-- Mention Spam -->
+    <div class="rule-container">
+        <h2 class="rule-title">Mention Spam Detection</h2>
+        <p>This rule blocks users from spamming mentions:</p>
+        <div class="code-container">
+            <pre><code class="language-regex" id="regex4">/@\w+/g</code></pre>
+            <button class="copy-btn" onclick="copyToClipboard('regex4')">📑</button>
+        </div>
+        <p><strong>Example:</strong> Matches <em>“@everyone”</em> or <em>“@username”</em>.</p>
+    </div>
+
+    <!-- Caps Lock Detection -->
+    <div class="rule-container">
+        <h2 class="rule-title">Caps Lock Detection</h2>
+        <p>This rule detects if a message is written in all capital letters:</p>
+        <div class="code-container">
+            <pre><code class="language-regex" id="regex5">^[A-Z\s]+$/g</code></pre>
+            <button class="copy-btn" onclick="copyToClipboard('regex5')">📑</button>
+        </div>
+        <p><strong>Example:</strong> Matches <em>“HELLO THERE”</em> or <em>“THIS IS SPARTA”</em>.</p>
+    </div>
+
+    <!-- Discord Invites -->
+    <div class="rule-container">
+        <h2 class="rule-title">Discord Invite Link Detection</h2>
+        <p>This rule detects Discord invite links in messages:</p>
+        <div class="code-container">
+            <pre><code class="language-regex" id="regex6">https?:\/\/(www\.)?(discord\.(gg|com)\/invite|discordapp\.com\/invite)\/[a-zA-Z0-9]{1,}/g</code></pre>
+            <button class="copy-btn" onclick="copyToClipboard('regex6')">📑</button>
+        </div>
+        <p><strong>Example:</strong> Matches <em>“https://discord.gg/abcdef”</em> or <em>“discord.com/invite/xyz123”</em>.</p>
+    </div>
+
+    <!-- Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.js"></script>
+
+    <!-- Link to external JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
